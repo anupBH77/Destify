@@ -7,7 +7,7 @@ import useLoginModal from "./useLoginModal";
 
 interface useFavouritesProps{
     listingId:Listing["id"],
-    currentUser:User | null 
+    currentUser?:User | null 
 }
 const useFavourites= ({listingId,currentUser}:useFavouritesProps)=>{
   const loginModal= useLoginModal()
