@@ -6,7 +6,7 @@ import { User } from '@prisma/client';
 import ListingCard from './listings/ListingCard';
 interface listingContainerProps{
     listings:any,
-    curUser?:User | null 
+    curUser:User | null 
 }
 const ListingContainer :React.FC<listingContainerProps>=({listings,curUser}) => {
     const [isLoading, setIsLoading]= useState(true);
