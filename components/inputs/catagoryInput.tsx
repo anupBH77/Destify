@@ -9,7 +9,7 @@ interface CategoryBoxProps {
   onClick: (value: string) => void;
 }
 
-const catagoryInput: React.FC<CategoryBoxProps> = ({
+const CatagoryInput: React.FC<CategoryBoxProps> = ({
   icon: Icon,
   label,
   selected,
@@ -39,4 +39,4 @@ const catagoryInput: React.FC<CategoryBoxProps> = ({
    );
 }
  
-export default catagoryInput;
+export default CatagoryInput;
