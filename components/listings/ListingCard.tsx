@@ -10,7 +10,7 @@ import {IndianRupeeIcon} from 'lucide-react'
 import { BiRupee } from "react-icons/bi";
 
 interface listingCardProps {
-  curUser: User | null,
+  curUser?: User | null,
   data: Listing,
   reservation?: Reservation,
   onCancel?: (id: string) => void,
@@ -100,6 +100,7 @@ const ListingCard: React.FC<listingCardProps> = ({ data,
             <HeartButton
               listingId={data.id}
               currentUser={curUser}
+              
               />
           </div>
         </div>

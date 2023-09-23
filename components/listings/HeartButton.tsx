@@ -15,7 +15,7 @@ import useLoading from "@/app/hooks/useLoading";
 
 interface HeartButtonProps {
   listingId: string
-  currentUser: User | null 
+  currentUser?: User | null 
 }
 
 const HeartButton: React.FC<HeartButtonProps> = ({ 
