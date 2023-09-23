@@ -9,13 +9,13 @@ const Search = () => {
   const [input,setInput]= useState('')
   const router= useRouter();
   const onSubmit=()=>{
-    const query= {title:input}
-   const url =queryString.stringifyUrl({
-    url:'/',
-    query:query
+  //   const query= {title:input}
+  //  const url =queryString.stringifyUrl({
+  //   url:'/',
+  //   query:query
 
-   },{skipNull:true})
-   router.push(url)
+  //  },{skipNull:true})
+  //  router.push(url)
     
 
    
