@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import Container from './container'
 import Loader from './Loader';
-import ListingCard from '../../destify-2/components/listings/ListingCard';
 import { User } from '@prisma/client';
+import ListingCard from './listings/ListingCard';
 interface listingContainerProps{
     listings:any,
-    curUser:User | null 
+    curUser?:User | null 
 }
 const ListingContainer :React.FC<listingContainerProps>=({listings,curUser}) => {
     const [isLoading, setIsLoading]= useState(true);

@@ -9,11 +9,11 @@ import RegisterModal from '../components/registerModal'
 
 import { Toaster } from 'react-hot-toast'
 import LoginModal from '@/components/LoginModal'
-import getCurrUser from '../../destify-2/app/actions/GetCurrUser'
 import RentModal from '@/components/RentModal'
-// import useLoding from '../../destify-2/app/hooks/useLoading'
+
 import Loader from '@/components/Loader'
 import { cn } from '@/lib/utils'
+import getCurrentUser from './actions/GetCurrUser'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +27,7 @@ export default  async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const currUser= await getCurrUser();
+  const currUser= await getCurrentUser();
   
   {console.log(currUser)}
   return (
