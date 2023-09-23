@@ -1,13 +1,11 @@
 import ListingContainer from '@/components/listingContainer';
-import Image from 'next/image'
 
-import ListingCard from '@/components/listings/ListingCard';
 import EmptyState from '@/components/EmptyState';
 import getListnigs, { IListingsParams } from '@/app/actions/getListing';
 interface homeProps{
   searchParams: IListingsParams
 }
-export default async function Home({searchParams}:homeProps) {
+async function Page({searchParams}:homeProps) {
 
   const listings = await getListnigs(searchParams);
   // const listings = await prisma?.listing.findMany();
@@ -21,3 +19,4 @@ export default async function Home({searchParams}:homeProps) {
     </main>
   )
 }
+export default Page
