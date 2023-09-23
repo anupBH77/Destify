@@ -41,6 +41,9 @@ const Reserve : React.FC<reserveProps>= ({price,currentUser,listingId,reservatio
         to: undefined,
       })
       const onReserve=async ()=>{
+        if(!currentUser){
+          return loginModal.onOpen()
+        }
                 // const r= await getIndividualListing({listingid:listingId});
                 // console.log(r)
 
@@ -53,6 +56,7 @@ const Reserve : React.FC<reserveProps>= ({price,currentUser,listingId,reservatio
             totalPrice,
             listingId
         }
+
        loading.setLoading(true)
        const d =await addToReserve(reservationData) ;
        loading.setLoading(false)
@@ -128,7 +132,7 @@ const Reserve : React.FC<reserveProps>= ({price,currentUser,listingId,reservatio
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
         <Calendar
-        disabled={reservationDateRanges?reservationDateRanges:undefined}
+        disabled={reservationDateRanges?[...reservationDateRanges]:undefined}
           initialFocus
           mode="range"
           defaultMonth={date?.from}

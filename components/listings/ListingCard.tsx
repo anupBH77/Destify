@@ -10,13 +10,13 @@ import {IndianRupeeIcon} from 'lucide-react'
 import { BiRupee } from "react-icons/bi";
 
 interface listingCardProps {
-  curUser: User | null,
+  curUser:undefined| User | null,
   data: Listing,
   reservation?: Reservation,
   onCancel?: (id: string) => void,
   totalPrice?: number | undefined
   actionLabel?: string,
-  currentUser?: User | null;
+  // currentUser: User | null | undefined;
 
 
 }
@@ -24,7 +24,7 @@ const ListingCard: React.FC<listingCardProps> = ({ data,
   curUser
   , reservation,
   actionLabel,
-  currentUser,
+  // currentUser,
   totalPrice,
   onCancel
 
@@ -54,12 +54,13 @@ const ListingCard: React.FC<listingCardProps> = ({ data,
   const handleCancel = useCallback(
     () => {
 
-      if (onCancel && data) {
-        console.log('oncancel started')
+      if (onCancel && reservation) {
+        console.log('oncancel started',reservation.id)
 
-        onCancel(data.id)
+        onCancel(reservation.id)
       }
     }, [])
+    
 
   return (
 <div className={`${reservation?"flex flex-col":""} `}>

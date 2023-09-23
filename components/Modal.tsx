@@ -30,16 +30,11 @@ const Modal: React.FC<ModalProps> = ({
           {/* <div className=' flex border border-x-0 border-t-0 shadow-sm h-[10%]'> */}
 
           <div className=" flex  items-center  p-6 rounded-t justify-center relative border-b-[1px] shadow">
-            {!isLoading? (<button
+            { (<button
               className=" p-1 border-0  hover:opacity-70 transition  left-9"
                 onClick={modalClose}
             >
               <XIcon className="w-5 h-5  border-gray-700  border rounded-sm"/>
-            </button>):(<button
-              className=" p-1 border-0   transition  left-9"
-                
-            >
-              <XIcon className="w-5 h-5 border text-gray-700  rounded-sm"/>
             </button>)}
            
             <div className="text-lg font-semibold  w-full text-center   ">

@@ -17,7 +17,7 @@ const BookingClient : React.FC<TripsClientProps>=({reservations,currentUser}) =>
     const router = useRouter();
     const loading = useLoading();
     const onCancel =async (id:string) => {
-       
+       console.log(id);
         loading.setLoading(true);
         const res= await axios.delete(`pages/api/reservation/${id}`)
         router.refresh();

@@ -5,17 +5,22 @@ import React, { useState } from 'react'
 import Container from '../container'
 import {CalendarHeartIcon,XIcon} from 'lucide-react'
 import Modal from '../Modal'
+import TripModal from '../TripModal'
+import useTripModal from '@/app/hooks/useTripModal'
 const Planner = () => {
+    const Tripmodal =useTripModal();
     const [isClicked,setClicked]= useState(false);
     const handleClose=()=>{
-        setClicked(false)
+        Tripmodal.onClose()
     }
+
   return (
-<div onClick={()=>{setClicked(true)}} className='fixed bottom-10 right-10 z-[50000] bg-blue-500 flex p-2 rounded-full cursor-pointer hover:opacity-90 shadow-2xl  transition  ' >
+    <div>
+{!(Tripmodal.isOpen) && <div onClick={()=>{Tripmodal.onOpen()}} className='fixed bottom-10 right-10 z-[50000] bg-blue-500 flex p-2 rounded-full cursor-pointer hover:opacity-90 shadow-2xl  transition  ' >
 <CalendarHeartIcon className=' h-5 w-5 m-2 text-white'/> 
-<Modal modalIsOpen={isClicked} title='filter' modalClose={handleClose}>
-    </Modal>
-</div>
+</div>}
+<TripModal modalIsOpen={Tripmodal.isOpen} title='filter' modalClose={handleClose} />
+    </div>
   )
 }
 

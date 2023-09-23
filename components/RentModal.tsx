@@ -1,6 +1,6 @@
 "use client"
 import React, { useCallback, useEffect, useState } from 'react'
-import CatagoryInput from '../components/inputs/catagoryInput'
+import CatagoryInput from '../../destify-2/components/inputs/catagoryInput'
 import Modal from './Modal'
 import Heading from './Heading';
 import {ArrowLeft} from 'lucide-react'
@@ -13,13 +13,13 @@ import {
   SubmitHandler, 
   useForm
 } from 'react-hook-form';
-import CountrySelect from './inputs/CountrySelect';
+import CountrySelect from '../../destify-2/components/inputs/CountrySelect';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from './ui/select';
-import Counter from './inputs/Counter';
-import ImageUpload from './inputs/ImageUpload';
+import Counter from '../../destify-2/components/inputs/Counter';
+import ImageUpload from '../../destify-2/components/inputs/ImageUpload';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import Input from './inputs/Input';
+import Input from '../../destify-2/components/inputs/Input';
 // import { Select } from '@radix-ui/react-select';
 const RentModal = () => {
     const router = useRouter()
@@ -30,7 +30,7 @@ const RentModal = () => {
     },[])
 
  const [isLoading, setIsLoading]= useState(false);
-    const RentModal= useRentaModal();
+    const rentModal= useRentaModal();
     const [currStep,setcurStep]=useState(0);
 
 
@@ -104,7 +104,7 @@ const RentModal = () => {
         router.refresh();
         reset();
         setcurStep(steps.CATEGORY)
-        RentModal.onClose();
+        rentModal.onClose();
       })
       .catch(() => {
         toast.error('Something went wrong.');
@@ -272,7 +272,7 @@ const RentModal = () => {
         )
       }
       return (
-    <Modal isLoading title='Property details' modalIsOpen={RentModal.isOpen} modalClose={RentModal.onClose}>
+    <Modal isLoading title='Property details' modalIsOpen={rentModal.isOpen} modalClose={rentModal.onClose}>
         <div>
 
         {ButtonGroup}

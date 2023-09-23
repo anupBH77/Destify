@@ -9,7 +9,7 @@ interface IParams {
   reservationId: string |null |undefined;
 }
 
-export async function GET(
+export async function DELETE(
   request: Request, 
   { params }: { params: IParams }
 ) {
@@ -24,15 +24,16 @@ export async function GET(
   if (!reservationId || typeof reservationId !== 'string') {
     throw new Error('Invalid ID');
   }
-
+console.log(reservationId,"about to deleter it ")
   const reservation = await prisma?.reservation.delete({
     where: {
-      id:reservationId
+     id:reservationId
       ,
-    //   OR: [
-    //     { userId:currentUser.id },
-    //     { listing:{userId:currentUser.id} }
-    //   ]
+      OR: [
+       
+        { userId:currentUser.id },
+        { listing:{userId:currentUser.id} }
+      ]
     }
   });
 
