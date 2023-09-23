@@ -10,7 +10,7 @@ import { toast } from 'react-hot-toast';
 import useLoading from '../hooks/useLoading';
 import Loader from '@/components/Loader';
 interface TripsClientProps {
-    reservations: Reservation[],
+    reservations: any,
     currentUser: User | null ,
   } 
 const BookingClient : React.FC<TripsClientProps>=({reservations,currentUser}) => {
@@ -39,7 +39,7 @@ const BookingClient : React.FC<TripsClientProps>=({reservations,currentUser}) =>
 
             <Heading
             title="Trips"
-      subtitle="Where you've been and where you're going"
+      subtitle="Where youve been and where you're going"
       />
     <div 
     className="
@@ -54,7 +54,7 @@ const BookingClient : React.FC<TripsClientProps>=({reservations,currentUser}) =>
     gap-8
     "
     >
-      {reservations.map((reservation) => (
+      {reservations.map((reservation:any) => (
           <ListingCard
           key={reservation.id}
           data={reservation.listing}

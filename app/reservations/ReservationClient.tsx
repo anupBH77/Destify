@@ -2,7 +2,7 @@
 import Heading from '@/components/Heading';
 import Container from '@/components/container';
 import ListingCard from '@/components/listings/ListingCard';
-import { Reservation, User } from '@prisma/client';
+import { Listing, Reservation, User } from '@prisma/client';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useState } from 'react'
@@ -10,7 +10,8 @@ import { toast } from 'react-hot-toast';
 import useLoading from '../hooks/useLoading';
 import Loader from '@/components/Loader';
 interface TripsClientProps {
-    reservations: Reservation[],
+    reservations: any ,
+ 
     currentUser: User | null ,
   } 
 const ReservationClient : React.FC<TripsClientProps>=({reservations,currentUser}) => {
@@ -53,7 +54,7 @@ const ReservationClient : React.FC<TripsClientProps>=({reservations,currentUser}
     gap-8
     "
     >
-      {reservations.map((reservation) => (
+      {reservations.map((reservation:any) => (
           <ListingCard
           key={reservation.id}
           data={reservation.listing}
