@@ -9,8 +9,9 @@ import { useRouter } from "next/navigation";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { useCallback, useState } from "react";
+import useLoading from "@/app/hooks/useLoading";
 
-// import ClientOnly from "./ClientOnly";
+
 
 interface HeartButtonProps {
   listingId: string
@@ -18,9 +19,12 @@ interface HeartButtonProps {
 }
 
 const HeartButton: React.FC<HeartButtonProps> = ({ 
+
   listingId,
   currentUser
 }) => {
+  const loading = useLoading();
+  
   const {hasFavourited,toggleFavourite} = useFavourites({
     listingId,
     currentUser
@@ -29,13 +33,19 @@ const HeartButton: React.FC<HeartButtonProps> = ({
 
   return (
     <div 
-      onClick={toggleFavourite}
+      onClick={ async ()=>
+
+        { 
+          const resp =  await toggleFavourite();
+
+      }}
       className="
         relative
         hover:opacity-80
         transition
         cursor-pointer
       "
+      
     >
       <AiOutlineHeart
         size={28}
@@ -51,6 +61,7 @@ const HeartButton: React.FC<HeartButtonProps> = ({
         className={
           hasFavourited? 'fill-rose-500' : 'fill-neutral-500/70'
         }
+       
       />
     </div>
    );

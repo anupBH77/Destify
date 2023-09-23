@@ -10,7 +10,7 @@ import {IndianRupeeIcon} from 'lucide-react'
 import { BiRupee } from "react-icons/bi";
 
 interface listingCardProps {
-  curUser:undefined| User | null,
+  curUser: User | null,
   data: Listing,
   reservation?: Reservation,
   onCancel?: (id: string) => void,
@@ -85,7 +85,7 @@ const ListingCard: React.FC<listingCardProps> = ({ data,
             className="
             object-cover 
             h-full 
-            w-full 
+            w-full
             group-hover:scale-110 
             transition
             "
