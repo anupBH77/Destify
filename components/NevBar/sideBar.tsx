@@ -98,12 +98,15 @@ else{
         <Link href="/" className="flex items-center pl-3 mb-14">
           <div className="relative h-8 w-8 mr-4">
             {curUser?.image ?<Image fill alt="Logo" src={curUser.image} />:<UserCircle2Icon className=" h-5 w-5"/>}
-            
+           
           </div>
           <h1 onClick={()=>router.push('/')} className={cn("text-2xl font-bold", poppins.className)}>
             Destify
           </h1>
+         
         </Link>
+        {curUser && <p className="space-y-1 px-2 text-xl font-bold text-teal-400">Hello,{curUser.name}</p>}
+
         <div className="space-y-1">
 
           {routes.map((route) => (
