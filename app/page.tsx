@@ -4,6 +4,7 @@ import getCurrentUser from './actions/GetCurrUser';
 import ListingCard from '@/components/listings/ListingCard';
 import EmptyState from '@/components/EmptyState';
 import getListnigs, { IListingsParams } from './actions/getListing';
+export const dynamic = 'force-dynamic'
 interface homeProps{
   searchParams: IListingsParams
 }

@@ -1,3 +1,4 @@
+
 import prisma from '../lib/prismadb'
 export interface IListingsParams {
     // userId?: string;
