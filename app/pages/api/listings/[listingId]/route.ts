@@ -1,7 +1,7 @@
 import getCurrentUser from "@/app/actions/GetCurrUser"
 import { NextResponse } from "next/server";
-import { toast } from "react-hot-toast";
 
+import prisma from "@/app/lib/prismadb";
 interface IParams{
     listingId:string
 }

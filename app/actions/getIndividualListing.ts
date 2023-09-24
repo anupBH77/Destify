@@ -1,5 +1,7 @@
+import prisma from "../lib/prismadb"
 interface listingProps{
     listingid:string | null | undefined
+    
 }
 export default async function getIndividualListing({listingid}:listingProps) {
     if(!listingid){

@@ -1,8 +1,8 @@
 import getCurrentUser from "@/app/actions/GetCurrUser";
-import { error } from "console";
-import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
 
+import {NextApiResponse } from "next";
+import { NextResponse } from "next/server";
+import prisma from "@/app/lib/prismadb";
 
 export async function  POST(req:Request,res:NextApiResponse){
     const curUser = await getCurrentUser();
