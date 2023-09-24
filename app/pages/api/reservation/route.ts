@@ -1,5 +1,4 @@
-import getCurrentUser from "@/app/actions/GetCurrUser";
-import { NextApiRequest } from "next";
+import prisma from "@/app/lib/prismadb";
 import { NextResponse } from "next/server";
 
 export async function POST(req:Request

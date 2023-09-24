@@ -1,9 +1,7 @@
 import getCurrentUser from "@/app/actions/GetCurrUser";
 import { NextResponse } from "next/server";
 import prisma from "@/app/lib/prismadb";
-import { Reservation } from "@prisma/client";
-// import getCurrentUser from "@/app/actions/getCurrentUser";
-// import prisma from "@/app/libs/prismadb";
+
 
 interface IParams {
   reservationId: string |null |undefined;
