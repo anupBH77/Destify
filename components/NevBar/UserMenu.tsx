@@ -37,21 +37,15 @@ const UserMenu :React.FC<useerMenuProps>=({curUser}) => {
                     {curUser?(
                          <div className="flex flex-col cursor-pointer">
                         
-                         <MenuItem
-                                label="Profile"
-                             onClick={()=>{loginModal.onOpen()}}
-                         />
-                         <MenuItem
-                             label="verify"
-                             onClick={()=>{onOpen(),console.log("is clicked",modalopen)}}
-                         />
+                       
+                       
                          <MenuItem
                              label="Upcoming trips"
                              onClick={()=>{router.push('/bookings')}}
                          />
                          <MenuItem
                              label="favourites"
-                             onClick={()=>{onOpen(),console.log("is clicked",modalopen)}}
+                             onClick={()=>{router.push("/favourites")}}
                          />
                          
                         
